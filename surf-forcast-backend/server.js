@@ -9,6 +9,7 @@ const forecastRoutes = require('./routes/forecast');
 
 dotenv.config();
 const app = express();
+app.get('/', (req, res) => {res.send('Surf Forecast API is running ✅ Try /api/forecast?lat=52.0864&lng=-10.1606');});
 const cors = require('cors');
 app.use(cors());
 
