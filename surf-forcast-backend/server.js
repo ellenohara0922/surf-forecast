@@ -10,8 +10,18 @@ const forecastRoutes = require('./routes/forecast');
 dotenv.config();
 const app = express();
 app.get('/', (req, res) => {res.send('Surf Forecast API is running ✅ Try /api/forecast?lat=52.0864&lng=-10.1606');});
-const cors = require('cors');
-app.use(cors());
+const cors = require("cors");
+
+app.use(cors({
+  origin: [
+    "https://tritide.onrender.com",
+    "http://localhost:5500",
+    "http://127.0.0.1:5500"
+  ],
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"]
+}));
+
 
 app.use(express.json());
 app.use('/api/forecast', forecastRoutes);
