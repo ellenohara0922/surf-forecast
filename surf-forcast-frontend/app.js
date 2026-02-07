@@ -26,7 +26,8 @@ selector.addEventListener('change', e => {
 // 3. Fetch forecast for given coordinates
 async function fetchForecast(lat, lng) {
   try {
-    const res = await fetch(`http://localhost:5000/api/forecast?lat=${lat}&lng=${lng}`);
+    const API_BASE = "https://surf-forecast-backend.onrender.com/";
+    const res = await fetch(`${API_BASE}/api/forecast?lat=${lat}&lng=${lng}`);
     const data = await res.json();
 
     console.log("Forecast source:", data.source);
