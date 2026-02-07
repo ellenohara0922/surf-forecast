@@ -2,7 +2,7 @@ const selector = document.getElementById('spotSelector');
 
 // 1. Load surf spots from JSON and populate the dropdown
 async function loadSpots() {
-  const res = await fetch('surf-spots.json');
+  const res = await fetch('./surf-spots.json');
   const spots = await res.json();
 
   spots.forEach(spot => {
